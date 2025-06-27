@@ -914,6 +914,15 @@ p {
         font-size: 0.9rem;
     }
 
+    /* Hide scroll down button and indicators on mobile */
+    .scroll-down-container {
+        display: none;
+    }
+
+    .video-indicators {
+        display: none;
+    }
+
     .contact-form-card {
         padding: 1.5rem;
         background: rgba(0, 0, 0, 0.8);
@@ -1032,6 +1041,15 @@ p {
     .video-counter {
         font-size: 0.8rem;
         min-width: 45px;
+    }
+
+    /* Hide scroll down button and indicators on small mobile */
+    .scroll-down-container {
+        display: none;
+    }
+
+    .video-indicators {
+        display: none;
     }
 
     .contact-form-card {
@@ -1195,8 +1213,13 @@ p {
         bottom: 3.5rem;
     }
 
+    /* Hide scroll down button and indicators on mobile landscape */
     .scroll-down-container {
-        bottom: 0.25rem;
+        display: none;
+    }
+
+    .video-indicators {
+        display: none;
     }
 
     .contact-form-card {
