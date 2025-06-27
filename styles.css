@@ -823,7 +823,7 @@ p {
     }
 
     .video-content-overlay {
-        padding: 90px 20px 40px;
+        padding: 90px 20px 60px;
         position: absolute;
         top: 0;
         left: 0;
@@ -839,7 +839,7 @@ p {
         text-align: center;
         align-items: flex-start;
         padding-top: 2rem;
-        padding-bottom: 3rem;
+        padding-bottom: 5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -858,7 +858,8 @@ p {
         max-width: 400px;
         margin: 0 auto;
         flex-shrink: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
+        z-index: 10;
     }
 
     .hero-buttons {
@@ -989,7 +990,7 @@ p {
     }
 
     .video-content-overlay {
-        padding: 80px 15px 40px;
+        padding: 80px 15px 50px;
         position: absolute;
         top: 0;
         left: 0;
@@ -1002,7 +1003,7 @@ p {
     .hero-content {
         gap: 1rem;
         padding-top: 1.5rem;
-        padding-bottom: 2rem;
+        padding-bottom: 4rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1010,7 +1011,8 @@ p {
     }
 
     .hero-form {
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
+        z-index: 10;
     }
 
     .company-branding {
