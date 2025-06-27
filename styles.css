@@ -815,14 +815,47 @@ p {
         display: flex;
     }
 
+    /* Mobile Video Carousel Fixes */
+    .hero-video-carousel {
+        height: 100vh;
+        min-height: 100vh;
+    }
+
+    .video-content-overlay {
+        padding: 80px 20px 20px;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        height: 100%;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .hero-text {
+        order: 1;
+        width: 100%;
+    }
+
+    .hero-form {
+        order: 2;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
     .hero-buttons {
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
     }
 
     .company-branding {
@@ -830,13 +863,26 @@ p {
         margin-bottom: 1.5rem;
     }
 
+    .company-branding h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
     .caption-container {
         text-align: center;
         margin-bottom: 1.5rem;
     }
 
+    .video-caption {
+        font-size: clamp(1.25rem, 6vw, 2rem);
+    }
+
+    .video-description {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+    }
+
     .video-controls {
         padding: 0 1rem;
+        top: 45%;
     }
 
     .control-btn {
@@ -844,14 +890,34 @@ p {
         height: 40px;
     }
 
+    .video-indicators {
+        bottom: 6rem;
+        gap: 0.75rem;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+
     .progress-indicators {
-        bottom: 4rem;
+        bottom: 8rem;
         flex-direction: column;
         gap: 0.5rem;
     }
 
     .progress-bar {
         width: 150px;
+    }
+
+    .video-counter {
+        font-size: 0.9rem;
+    }
+
+    .contact-form-card {
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(15px);
     }
 
     .about-content {
@@ -884,8 +950,111 @@ p {
         padding: 100px 20px 50px;
     }
 
+    /* Extra Small Mobile Video Carousel */
+    .hero-video-carousel {
+        height: 100vh;
+        min-height: 100vh;
+    }
+
+    .video-content-overlay {
+        padding: 70px 15px 15px;
+    }
+
+    .hero-content {
+        gap: 1.5rem;
+        padding-top: 1rem;
+    }
+
+    .company-branding {
+        margin-bottom: 1rem;
+    }
+
+    .company-branding h1 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .caption-container {
+        margin-bottom: 1rem;
+    }
+
+    .video-caption {
+        font-size: clamp(1.1rem, 5vw, 1.6rem);
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+
+    .video-description {
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+        line-height: 1.4;
+    }
+
+    .video-controls {
+        padding: 0 0.5rem;
+        top: 40%;
+    }
+
+    .control-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .control-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .video-indicators {
+        bottom: 5rem;
+        gap: 0.5rem;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    .progress-indicators {
+        bottom: 7rem;
+        gap: 0.3rem;
+    }
+
+    .progress-bar {
+        width: 120px;
+        height: 3px;
+    }
+
+    .video-counter {
+        font-size: 0.8rem;
+        min-width: 45px;
+    }
+
     .contact-form-card {
         padding: 1.5rem;
+    }
+
+    .contact-form-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 0.75rem;
     }
 
     .service-row {
@@ -944,12 +1113,109 @@ p {
     }
 
     .scroll-down-btn {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .scroll-down-btn svg {
+        width: 18px;
+        height: 18px;
     }
 
     .scroll-down-text {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Mobile Landscape Orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-video-carousel {
+        height: 100vh;
+    }
+
+    .video-content-overlay {
+        padding: 60px 20px 10px;
+    }
+
+    .hero-content {
+        gap: 1rem;
+        padding-top: 0.5rem;
+        align-items: center;
+    }
+
+    .company-branding {
+        margin-bottom: 0.5rem;
+    }
+
+    .company-branding h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .caption-container {
+        margin-bottom: 0.5rem;
+    }
+
+    .video-caption {
+        font-size: clamp(1rem, 4vw, 1.3rem);
+        margin-bottom: 0.3rem;
+    }
+
+    .video-description {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+
+    .hero-buttons {
+        gap: 0.5rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hero-buttons .btn {
+        width: auto;
+        max-width: 150px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .video-controls {
+        top: 45%;
+    }
+
+    .video-indicators {
+        bottom: 2rem;
+    }
+
+    .progress-indicators {
+        bottom: 3.5rem;
+    }
+
+    .scroll-down-container {
+        bottom: 0.25rem;
+    }
+
+    .contact-form-card {
+        padding: 1rem;
+        max-width: 350px;
+    }
+
+    .contact-form-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 0.75rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.5rem;
     }
 }
 
