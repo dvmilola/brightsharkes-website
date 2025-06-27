@@ -225,21 +225,34 @@ p {
 
 /* Company Branding */
 .company-branding {
-    margin-bottom: 2rem;
-    text-align: left;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    width: 90%;
+    max-width: 800px;
 }
 
 .company-branding h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #d4a574;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 /* Caption Container */
 .caption-container {
-    margin-bottom: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    width: 80%;
+    max-width: 800px;
     animation: fadeInUp 0.8s ease-out;
 }
 
@@ -276,9 +289,10 @@ p {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     color: #d4a574;
     font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-description {
@@ -288,9 +302,17 @@ p {
 }
 
 .hero-buttons {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
+    z-index: 10;
+    width: 90%;
+    max-width: 600px;
 }
 
 /* Video Controls */
@@ -407,8 +429,11 @@ p {
 
 /* Hero Form */
 .hero-form {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .contact-form-card {
@@ -807,8 +832,24 @@ p {
     color: #999;
 }
 
+/* Mobile Content Wrapper */
+.mobile-content-wrapper {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .mobile-content-wrapper {
+        display: block;
+        padding: 4rem 1rem 2rem 1rem;
+        text-align: center;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    
+    .hero-content {
+        display: none;
+    }
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -833,29 +874,25 @@ p {
     /* Mobile Video Carousel Fixes */
     .hero-video-carousel {
         height: 100vh;
+        max-height: 100vh;
         position: relative;
         overflow: hidden;
     }
 
     .video-content-overlay {
-        padding: 90px 20px 50px;
+        padding: 80px 15px 20px;
         position: relative;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        overflow-y: auto;
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        text-align: center;
-        align-items: flex-start;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
+        display: block;
+        height: auto;
+        min-height: calc(100vh - 100px);
+        padding: 0;
+        position: relative;
     }
 
     .hero-text {
@@ -865,19 +902,23 @@ p {
     }
 
     .hero-form {
-        order: 2;
+        position: static;
+        transform: none;
         width: 100%;
         max-width: 400px;
-        margin: 0 auto;
-        flex-shrink: 0;
-        z-index: 10;
+        margin: 0 auto 4rem auto;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-buttons {
-        justify-content: center;
+        position: static;
+        transform: none;
         flex-direction: column;
+        width: 100%;
+        margin-bottom: 2rem;
+        justify-content: center;
         align-items: center;
-        gap: 1rem;
     }
 
     .hero-buttons .btn {
@@ -886,8 +927,11 @@ p {
     }
 
     .company-branding {
+        position: static;
+        transform: none;
         text-align: center;
-        margin-bottom: 1.5rem;
+        width: 100%;
+        margin: 3rem 0 2rem 0;
     }
 
     .company-branding h1 {
@@ -895,8 +939,11 @@ p {
     }
 
     .caption-container {
+        position: static;
+        transform: none;
         text-align: center;
-        margin-bottom: 1.5rem;
+        width: 100%;
+        margin-bottom: 2rem;
     }
 
     .video-caption {
@@ -958,7 +1005,8 @@ p {
         padding: 1.5rem;
         background: rgba(0, 0, 0, 0.8);
         backdrop-filter: blur(15px);
-        max-height: none;
+        max-height: 400px;
+        overflow-y: auto;
         width: 100%;
         margin: 0 auto;
     }
@@ -989,6 +1037,11 @@ p {
 }
 
 @media (max-width: 480px) {
+    .mobile-content-wrapper {
+        padding: 3rem 0.5rem 2rem 0.5rem;
+        max-height: calc(100vh - 70px);
+    }
+    
     .hero {
         padding: 100px 20px 50px;
     }
@@ -996,34 +1049,42 @@ p {
     /* Extra Small Mobile Video Carousel */
     .hero-video-carousel {
         height: 100vh;
+        max-height: 100vh;
         position: relative;
         overflow: hidden;
     }
 
     .video-content-overlay {
-        padding: 80px 15px 50px;
+        padding: 70px 10px 20px;
         position: relative;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        overflow-y: auto;
     }
 
     .hero-content {
-        gap: 1rem;
-        padding-top: 1.5rem;
-        padding-bottom: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
+        display: block;
+        height: auto;
+        min-height: calc(100vh - 90px);
+        padding: 0;
     }
 
     .hero-form {
-        z-index: 10;
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto 3rem auto;
+        display: flex;
+        justify-content: center;
     }
 
     .company-branding {
-        margin-bottom: 1rem;
+        position: static;
+        transform: none;
+        text-align: center;
+        width: 100%;
+        margin: 2rem 0 1.5rem 0;
     }
 
     .company-branding h1 {
@@ -1037,7 +1098,11 @@ p {
     }
 
     .caption-container {
-        margin-bottom: 1rem;
+        position: static;
+        transform: none;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1.5rem;
     }
 
     .video-caption {
@@ -1106,6 +1171,8 @@ p {
 
     .contact-form-card {
         padding: 1.5rem;
+        max-height: 350px;
+        overflow-y: auto;
     }
 
     .contact-form-card h3 {
@@ -1169,7 +1236,12 @@ p {
     }
 
     .hero-buttons {
+        position: static;
+        transform: none;
         flex-direction: column;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        justify-content: center;
         align-items: center;
     }
 
@@ -1214,7 +1286,9 @@ p {
     }
 
     .company-branding {
-        margin-bottom: 0.5rem;
+        top: 8%;
+        width: 80%;
+        max-width: 600px;
     }
 
     .company-branding h1 {
@@ -1228,7 +1302,9 @@ p {
     }
 
     .caption-container {
-        margin-bottom: 0.5rem;
+        top: 45%;
+        width: 90%;
+        max-width: 600px;
     }
 
     .video-caption {
@@ -1241,9 +1317,11 @@ p {
     }
 
     .hero-buttons {
-        gap: 0.5rem;
+        bottom: 15%;
         flex-direction: row;
-        justify-content: center;
+        width: 80%;
+        max-width: 500px;
+        gap: 0.5rem;
     }
 
     .hero-buttons .btn {
