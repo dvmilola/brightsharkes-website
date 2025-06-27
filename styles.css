@@ -817,22 +817,20 @@ p {
 
     /* Mobile Video Carousel Fixes */
     .hero-video-carousel {
-        height: 100vh;
         min-height: 100vh;
+        height: auto;
     }
 
     .video-content-overlay {
         padding: 80px 20px 40px;
-        overflow-y: auto;
-        height: 100vh;
-        scroll-behavior: smooth;
+        overflow: visible;
+        min-height: 100vh;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         text-align: center;
-        min-height: calc(100vh - 120px);
         align-items: flex-start;
         padding-top: 1rem;
         display: flex;
@@ -977,21 +975,19 @@ p {
 
     /* Extra Small Mobile Video Carousel */
     .hero-video-carousel {
-        height: 100vh;
         min-height: 100vh;
+        height: auto;
     }
 
     .video-content-overlay {
         padding: 70px 15px 30px;
-        overflow-y: auto;
-        height: 100vh;
-        scroll-behavior: smooth;
+        overflow: visible;
+        min-height: 100vh;
     }
 
     .hero-content {
         gap: 1rem;
         padding-top: 0.5rem;
-        min-height: calc(100vh - 100px);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
