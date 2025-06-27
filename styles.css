@@ -77,13 +77,13 @@ p {
 }
 
 .btn-submit {
-    background: #1a1a1a;
+    background: #6b7280;
     color: white;
     width: 100%;
 }
 
 .btn-submit:hover {
-    background: #333;
+    background: #4b5563;
 }
 
 /* Header/Navigation */
@@ -825,6 +825,7 @@ p {
         padding: 80px 20px 40px;
         overflow-y: auto;
         height: 100vh;
+        scroll-behavior: smooth;
     }
 
     .hero-content {
@@ -984,6 +985,7 @@ p {
         padding: 70px 15px 30px;
         overflow-y: auto;
         height: 100vh;
+        scroll-behavior: smooth;
     }
 
     .hero-content {
@@ -1347,6 +1349,10 @@ p {
 
 /* Smooth scrolling */
 html {
+    scroll-behavior: smooth;
+}
+
+* {
     scroll-behavior: smooth;
 }
 
