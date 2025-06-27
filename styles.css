@@ -916,11 +916,11 @@ p {
 
     /* Hide scroll down button and indicators on mobile */
     .scroll-down-container {
-        display: none;
+        display: none !important;
     }
 
     .video-indicators {
-        display: none;
+        display: none !important;
     }
 
     .contact-form-card {
@@ -1045,11 +1045,11 @@ p {
 
     /* Hide scroll down button and indicators on small mobile */
     .scroll-down-container {
-        display: none;
+        display: none !important;
     }
 
     .video-indicators {
-        display: none;
+        display: none !important;
     }
 
     .contact-form-card {
@@ -1215,11 +1215,11 @@ p {
 
     /* Hide scroll down button and indicators on mobile landscape */
     .scroll-down-container {
-        display: none;
+        display: none !important;
     }
 
     .video-indicators {
-        display: none;
+        display: none !important;
     }
 
     .contact-form-card {
