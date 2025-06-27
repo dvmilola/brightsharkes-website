@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://brightsharkes.netlify.app/sitemap.xml
+
+# Disallow crawling of assets that don't need to be indexed
+Disallow: /assets/videos/
+Allow: /assets/pexels-divinetechygirl-1181406.jpg
+
+# Allow common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (optional)
+Crawl-delay: 1 
