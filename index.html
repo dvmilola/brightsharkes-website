@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brightsharkes Global Resources - Sourcing, Services & Personnel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h2>Brightsharkes Global Resources</h2>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Video Carousel Section -->
+    <section id="home" class="hero-video-carousel">
+        <div class="video-carousel-container">
+            <!-- Video Background Container -->
+            <div class="video-container">
+                <!-- Video 1: AGO & Lubricants -->
+                <video 
+                    class="background-video active" 
+                    data-caption="AGO & Lubricants Supply"
+                    data-description="Reliable procurement and supply of AGO and industrial lubricants"
+                    muted 
+                    autoplay 
+                    loop
+                    playsinline>
+                    <source src="assets/videos/12731050_3840_2160_24fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Video 2: Electrical & Solar -->
+                <video 
+                    class="background-video" 
+                    data-caption="Electrical & Solar Accessories"
+                    data-description="Complete sourcing of electrical equipment and solar lighting solutions"
+                    muted 
+                    autoplay 
+                    loop
+                    playsinline>
+                    <source src="assets/videos/1477975_People_Technology_3840x2160.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Video 3: Facility Maintenance -->
+                <video 
+                    class="background-video" 
+                    data-caption="Facility Maintenance"
+                    data-description="Comprehensive maintenance services for your business premises"
+                    muted 
+                    autoplay 
+                    loop
+                    playsinline>
+                    <source src="assets/videos/3196563-uhd_3840_2160_25fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Video 4: Horticulture Services -->
+                <video 
+                    class="background-video" 
+                    data-caption="Horticulture Services"
+                    data-description="Professional landscaping and garden maintenance solutions"
+                    muted 
+                    autoplay 
+                    loop
+                    playsinline>
+                    <source src="assets/videos/8544141-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Video 5: Personnel Sourcing -->
+                <video 
+                    class="background-video" 
+                    data-caption="Personnel Sourcing"
+                    data-description="Recruitment of qualified cleaners, chefs, and support staff"
+                    muted 
+                    autoplay 
+                    loop
+                    playsinline>
+                    <source src="assets/videos/1115170_Cleaning_Man_3840x2160.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Overlay Content -->
+            <div class="video-content-overlay">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="company-branding">
+                            <h1>Brightsharkes Global Resources</h1>
+                            <p class="hero-subtitle">Your trusted partner for comprehensive business solutions</p>
+                        </div>
+
+                        <div class="caption-container">
+                            <h2 class="video-caption">AGO & Lubricants Supply</h2>
+                            <p class="video-description">Reliable procurement and supply of AGO and industrial lubricants</p>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="window.location.href='tel:08113017565'">Call Us 08113017565</button>
+                            <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Quote</button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-form">
+                        <div class="contact-form-card">
+                            <h3>Get a Free Quote</h3>
+                            <form class="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First name *</label>
+                                        <input type="text" id="firstName" name="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last name *</label>
+                                        <input type="text" id="lastName" name="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Write a message *</label>
+                                    <textarea id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Controls -->
+                <div class="video-controls">
+                    <button class="control-btn prev-btn" aria-label="Previous video">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="control-btn next-btn" aria-label="Next video">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Progress Indicators -->
+                <div class="progress-indicators">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="video-counter">
+                        <span class="current-video">1</span> / <span class="total-videos">5</span>
+                    </div>
+                </div>
+
+                <!-- Video Indicators -->
+                <div class="video-indicators">
+                    <button class="indicator active" data-video="0" aria-label="Video 1: AGO & Lubricants"></button>
+                    <button class="indicator" data-video="1" aria-label="Video 2: Electrical & Solar"></button>
+                    <button class="indicator" data-video="2" aria-label="Video 3: Facility Maintenance"></button>
+                    <button class="indicator" data-video="3" aria-label="Video 4: Horticulture"></button>
+                    <button class="indicator" data-video="4" aria-label="Video 5: Personnel Sourcing"></button>
+                </div>
+
+                <!-- Scroll Down Arrow -->
+                <div class="scroll-down-container">
+                    <button class="scroll-down-btn" onclick="scrollToAbout()" aria-label="Scroll to About section">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="7,13 12,18 17,13"></polyline>
+                            <polyline points="7,6 12,11 17,6"></polyline>
+                        </svg>
+                    </button>
+                    <span class="scroll-down-text">Scroll Down</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Brightsharkes Global Resources</h2>
+                    <p class="about-lead">Brightsharkes Global Resources is your comprehensive business solutions partner, specializing in sourcing, facility services, and personnel recruitment across Nigeria.</p>
+                    <p>We excel in procurement and supply of AGO, lubricants, electrical and solar accessories. Our service portfolio includes facility maintenance, horticulture, general housekeeping, logistics support, and waste management. We also source qualified personnel including cleaners, chefs, laundry handlers, and other skilled professionals.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>200+</h3>
+                            <p>Clients Served</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                    <div class="about-cta">
+                        <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="assets/pexels-divinetechygirl-1181406.jpg" alt="Brightsharkes Global Resources - Professional Business Services" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+        </div>
+
+        <!-- Service 1: Logistics -->
+        <div class="service-row">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Logistics Services" />
+            </div>
+            <div class="service-content">
+                <div class="service-tag">Logistics Support</div>
+                <h3>Logistics</h3>
+                <p>Our logistics services are customized to meet your specific transportation needs. From route planning to delivery management, we handle every detail with precision and care.</p>
+            </div>
+        </div>
+
+        <!-- Service 2: AGO & Lubricants -->
+        <div class="service-row reverse">
+            <div class="service-content">
+                <div class="service-tag">Energy Solutions</div>
+                <h3>AGO & Lubricants Supply</h3>
+                <p>Reliable procurement and supply of AGO and industrial lubricants for your operations. We ensure consistent quality and timely delivery to keep your business running smoothly.</p>
+            </div>
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="AGO & Lubricants Supply" />
+            </div>
+        </div>
+
+        <!-- Service 3: Facility Maintenance -->
+        <div class="service-row">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Facility Maintenance" />
+            </div>
+            <div class="service-content">
+                <div class="service-tag">Maintenance Solutions</div>
+                <h3>Facility Maintenance</h3>
+                <p>Comprehensive maintenance services for your business premises and equipment. Our skilled technicians ensure your facilities operate at peak efficiency.</p>
+            </div>
+        </div>
+
+        <!-- Service 4: Personnel Sourcing -->
+        <div class="service-row reverse">
+            <div class="service-content">
+                <div class="service-tag">Human Resources</div>
+                <h3>Personnel Sourcing</h3>
+                <p>Professional recruitment of qualified cleaners, chefs, laundry handlers, and support staff. We connect you with reliable personnel to meet your operational needs.</p>
+            </div>
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80" alt="Personnel Sourcing" />
+            </div>
+        </div>
+
+        <!-- Service 5: Electrical & Solar -->
+        <div class="service-row">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Electrical & Solar Services" />
+            </div>
+            <div class="service-content">
+                <div class="service-tag">Energy Solutions</div>
+                <h3>Electrical & Solar Accessories</h3>
+                <p>Complete sourcing of electrical equipment and solar lighting solutions. We provide sustainable energy solutions to power your operations efficiently.</p>
+            </div>
+        </div>
+
+        <!-- Service 6: Horticulture -->
+        <div class="service-row reverse">
+            <div class="service-content">
+                <div class="service-tag">Landscaping Services</div>
+                <h3>Horticulture Services</h3>
+                <p>Professional landscaping and garden maintenance solutions. We create and maintain beautiful outdoor spaces that enhance your business environment.</p>
+            </div>
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Horticulture Services" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to start your project? Contact us today for a free consultation and quote.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>08113017565</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>brightsharkesglobalresources@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>22, Idusogie Street Off Etete GRA<br>Benin City, Edo State</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Mon-Fri: 7AM-6PM<br>24/7 Emergency Service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-section">
+                    <form class="main-contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Service</option>
+                                <option value="ago-lubricants">AGO & Lubricants Supply</option>
+                                <option value="electrical-solar">Electrical & Solar Accessories</option>
+                                <option value="facility-maintenance">Facility Maintenance</option>
+                                <option value="horticulture">Horticulture Services</option>
+                                <option value="housekeeping">Housekeeping & Cleaning</option>
+                                <option value="personnel-sourcing">Personnel Sourcing</option>
+                                <option value="waste-management">Waste Management</option>
+                                <option value="logistics-support">Logistics Support</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Brightsharkes Global Resources</h3>
+                    <p>Your trusted partner for comprehensive sourcing, facility services, and personnel recruitment solutions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">AGO & Lubricants Supply</a></li>
+                        <li><a href="#services">Electrical & Solar Accessories</a></li>
+                        <li><a href="#services">Facility Maintenance</a></li>
+                        <li><a href="#services">Personnel Sourcing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Safety</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 08113017565</p>
+                    <p>✉️ brightsharkesglobalresources@gmail.com</p>
+                    <p>📍 22, Idusogie Street Off Etete GRA<br>Benin City, Edo State</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Brightsharkes Global Resources. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
