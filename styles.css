@@ -822,21 +822,27 @@ p {
     }
 
     .video-content-overlay {
-        padding: 80px 20px 20px;
+        padding: 80px 20px 40px;
+        overflow-y: auto;
+        height: 100vh;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
         text-align: center;
-        height: 100%;
+        min-height: calc(100vh - 120px);
         align-items: flex-start;
-        padding-top: 2rem;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .hero-text {
         order: 1;
         width: 100%;
+        flex-shrink: 0;
     }
 
     .hero-form {
@@ -844,6 +850,8 @@ p {
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
+        flex-shrink: 0;
+        margin-bottom: 2rem;
     }
 
     .hero-buttons {
@@ -931,6 +939,9 @@ p {
         padding: 1.5rem;
         background: rgba(0, 0, 0, 0.8);
         backdrop-filter: blur(15px);
+        max-height: none;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .about-content {
@@ -970,12 +981,22 @@ p {
     }
 
     .video-content-overlay {
-        padding: 70px 15px 15px;
+        padding: 70px 15px 30px;
+        overflow-y: auto;
+        height: 100vh;
     }
 
     .hero-content {
-        gap: 1.5rem;
-        padding-top: 1rem;
+        gap: 1rem;
+        padding-top: 0.5rem;
+        min-height: calc(100vh - 100px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hero-form {
+        margin-bottom: 1.5rem;
     }
 
     .company-branding {
