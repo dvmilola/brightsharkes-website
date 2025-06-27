@@ -914,12 +914,16 @@ p {
         font-size: 0.9rem;
     }
 
-    /* Hide scroll down button and indicators on mobile */
+    /* Hide scroll down button, indicators, and progress bar on mobile */
     .scroll-down-container {
         display: none !important;
     }
 
     .video-indicators {
+        display: none !important;
+    }
+
+    .progress-indicators {
         display: none !important;
     }
 
@@ -1043,12 +1047,16 @@ p {
         min-width: 45px;
     }
 
-    /* Hide scroll down button and indicators on small mobile */
+    /* Hide scroll down button, indicators, and progress bar on small mobile */
     .scroll-down-container {
         display: none !important;
     }
 
     .video-indicators {
+        display: none !important;
+    }
+
+    .progress-indicators {
         display: none !important;
     }
 
@@ -1213,12 +1221,16 @@ p {
         bottom: 3.5rem;
     }
 
-    /* Hide scroll down button and indicators on mobile landscape */
+    /* Hide scroll down button, indicators, and progress bar on mobile landscape */
     .scroll-down-container {
         display: none !important;
     }
 
     .video-indicators {
+        display: none !important;
+    }
+
+    .progress-indicators {
         display: none !important;
     }
 
