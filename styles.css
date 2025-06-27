@@ -159,34 +159,34 @@ p {
 
 /* Video Container */
 .video-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    z-index: -1;
+    height: 100%;
+    z-index: 1;
 }
 
 /* Background Videos */
 .background-video {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     opacity: 0;
     transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: -1;
+    z-index: 1;
 }
 
 .background-video.active {
     opacity: 1;
-    z-index: -1;
+    z-index: 2;
 }
 
 .background-video.next {
-    z-index: -1;
+    z-index: 3;
 }
 
 /* Video Content Overlay */
@@ -225,34 +225,21 @@ p {
 
 /* Company Branding */
 .company-branding {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 10;
-    width: 90%;
-    max-width: 800px;
+    margin-bottom: 2rem;
+    text-align: left;
 }
 
 .company-branding h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #ffffff;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    color: #d4a574;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Caption Container */
 .caption-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 10;
-    width: 80%;
-    max-width: 800px;
+    margin-bottom: 2rem;
     animation: fadeInUp 0.8s ease-out;
 }
 
@@ -289,10 +276,9 @@ p {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;
     color: #d4a574;
     font-weight: 500;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-description {
@@ -302,17 +288,9 @@ p {
 }
 
 .hero-buttons {
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;
-    z-index: 10;
-    width: 90%;
-    max-width: 600px;
 }
 
 /* Video Controls */
@@ -429,11 +407,8 @@ p {
 
 /* Hero Form */
 .hero-form {
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-    z-index: 10;
+    display: flex;
+    justify-content: center;
 }
 
 .contact-form-card {
@@ -488,10 +463,7 @@ p {
 /* About Section */
 .about {
     padding: 5rem 0;
-    background: rgba(248, 249, 250, 0.95);
-    backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 1;
+    background: #f8f9fa;
 }
 
 .about-content {
@@ -567,18 +539,14 @@ p {
 
 /* Services Section */
 .services {
-    background: rgba(44, 44, 44, 0.95);
-    backdrop-filter: blur(10px);
+    background: #2c2c2c;
     color: white;
-    position: relative;
-    z-index: 1;
 }
 
 .section-header {
     text-align: center;
     padding: 4rem 0 2rem;
-    background: rgba(44, 44, 44, 0.95);
-    backdrop-filter: blur(10px);
+    background: #2c2c2c;
 }
 
 .section-header h2 {
@@ -658,8 +626,7 @@ p {
 
 .service-content {
     padding: 4rem 6rem;
-    background: rgba(44, 44, 44, 0.95);
-    backdrop-filter: blur(10px);
+    background: #2c2c2c;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -696,10 +663,7 @@ p {
 /* Contact Section */
 .contact {
     padding: 5rem 0;
-    background: rgba(248, 249, 250, 0.95);
-    backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 1;
+    background: #f8f9fa;
 }
 
 .contact-content {
@@ -765,12 +729,9 @@ p {
 
 /* Footer */
 .footer {
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
+    background: #1a1a1a;
     color: white;
     padding: 3rem 0 1rem;
-    position: relative;
-    z-index: 1;
 }
 
 .footer-content {
@@ -837,18 +798,87 @@ p {
     display: none;
 }
 
+/* Mobile positioning for content elements */
+.mobile-content-wrapper .company-branding {
+    position: static;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+
+.mobile-content-wrapper .company-branding h1 {
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+.mobile-content-wrapper .hero-subtitle {
+    color: #d4a574;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0;
+}
+
+.mobile-content-wrapper .caption-container {
+    position: static;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mobile-content-wrapper .hero-buttons {
+    position: static;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Mobile Form Section */
+.mobile-form-section {
+    display: none;
+    padding: 3rem 0;
+    background: #f8f9fa;
+}
+
+.mobile-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.mobile-form-section .contact-form-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-height: none;
+    overflow: visible;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .mobile-content-wrapper {
         display: block;
-        padding: 4rem 1rem 2rem 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
         text-align: center;
-        max-height: calc(100vh - 80px);
-        overflow-y: auto;
+        overflow: hidden;
     }
     
+        .mobile-form-section {
+        display: block;
+    }
+
     .hero-content {
-        display: none;
+        display: none !important;
+    }
+
+    .hero-form {
+        display: none !important;
+    }
+
+    .hero-text {
+        display: none !important;
     }
     .nav-menu {
         position: fixed;
@@ -880,78 +910,83 @@ p {
     }
 
     .video-content-overlay {
-        padding: 80px 15px 20px;
         position: relative;
         width: 100%;
         height: 100%;
-        overflow-y: auto;
-    }
-
-    .hero-content {
-        display: block;
-        height: auto;
-        min-height: calc(100vh - 100px);
         padding: 0;
-        position: relative;
+        overflow: hidden;
     }
 
-    .hero-text {
-        order: 1;
-        width: 100%;
-        flex-shrink: 0;
+    /* Override mobile content wrapper positioning for mobile */
+    .mobile-content-wrapper .company-branding {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 10;
+        width: 90%;
+        max-width: 800px;
+        margin: 0;
     }
 
-    .hero-form {
-        position: static;
-        transform: none;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto 4rem auto;
-        display: flex;
-        justify-content: center;
+    .mobile-content-wrapper .company-branding h1 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        color: #ffffff;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        margin-bottom: 0.5rem;
     }
 
-    .hero-buttons {
-        position: static;
-        transform: none;
+    .mobile-content-wrapper .hero-subtitle {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        color: #d4a574;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        margin-bottom: 0;
+    }
+
+    .mobile-content-wrapper .caption-container {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 10;
+        width: 80%;
+        max-width: 800px;
+        margin: 0;
+    }
+
+    .mobile-content-wrapper .hero-buttons {
+        position: absolute;
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        width: 90%;
+        max-width: 600px;
+        margin: 0;
         flex-direction: column;
-        width: 100%;
-        margin-bottom: 2rem;
-        justify-content: center;
         align-items: center;
+        gap: 1rem;
     }
 
-    .hero-buttons .btn {
+    .mobile-content-wrapper .hero-buttons .btn {
         width: 100%;
         max-width: 280px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
     }
 
-    .company-branding {
-        position: static;
-        transform: none;
-        text-align: center;
-        width: 100%;
-        margin: 3rem 0 2rem 0;
+    .mobile-content-wrapper .video-caption {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        margin-bottom: 0.8rem;
+        line-height: 1.2;
     }
 
-    .company-branding h1 {
-        font-size: clamp(2rem, 8vw, 3rem);
-    }
-
-    .caption-container {
-        position: static;
-        transform: none;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 2rem;
-    }
-
-    .video-caption {
-        font-size: clamp(1.25rem, 6vw, 2rem);
-    }
-
-    .video-description {
-        font-size: clamp(0.9rem, 3vw, 1rem);
+    .mobile-content-wrapper .video-description {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        line-height: 1.4;
+        margin-bottom: 0;
     }
 
     .video-controls {
@@ -1001,15 +1036,7 @@ p {
         display: none !important;
     }
 
-    .contact-form-card {
-        padding: 1.5rem;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(15px);
-        max-height: 400px;
-        overflow-y: auto;
-        width: 100%;
-        margin: 0 auto;
-    }
+
 
     .about-content {
         grid-template-columns: 1fr;
@@ -1038,8 +1065,13 @@ p {
 
 @media (max-width: 480px) {
     .mobile-content-wrapper {
-        padding: 3rem 0.5rem 2rem 0.5rem;
-        max-height: calc(100vh - 70px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        overflow: hidden;
     }
     
     .hero {
@@ -1069,15 +1101,7 @@ p {
         padding: 0;
     }
 
-    .hero-form {
-        position: static;
-        transform: none;
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto 3rem auto;
-        display: flex;
-        justify-content: center;
-    }
+
 
     .company-branding {
         position: static;
@@ -1169,11 +1193,7 @@ p {
         display: none !important;
     }
 
-    .contact-form-card {
-        padding: 1.5rem;
-        max-height: 350px;
-        overflow-y: auto;
-    }
+
 
     .contact-form-card h3 {
         font-size: 1.25rem;

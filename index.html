@@ -101,21 +101,23 @@
 
             <!-- Overlay Content -->
             <div class="video-content-overlay">
-                <!-- Mobile Content Wrapper -->
-                <div class="mobile-content-wrapper">
-                    <div class="company-branding">
-                        <h1>Brightsharkes Global Resources</h1>
-                        <p class="hero-subtitle">Your trusted partner for comprehensive business solutions</p>
-                    </div>
+                <!-- Desktop Hero Content (hidden on mobile) -->
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="company-branding">
+                            <h1>Brightsharkes Global Resources</h1>
+                            <p class="hero-subtitle">Your trusted partner for comprehensive business solutions</p>
+                        </div>
 
-                    <div class="caption-container">
-                        <h2 class="video-caption">AGO & Lubricants Supply</h2>
-                        <p class="video-description">Reliable procurement and supply of AGO and industrial lubricants</p>
-                    </div>
+                        <div class="caption-container">
+                            <h2 class="video-caption">AGO & Lubricants Supply</h2>
+                            <p class="video-description">Reliable procurement and supply of AGO and industrial lubricants</p>
+                        </div>
 
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary" onclick="window.location.href='tel:08113017565'">Call Us 08113017565</button>
-                        <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Quote</button>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="window.location.href='tel:08113017565'">Call Us 08113017565</button>
+                            <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Quote</button>
+                        </div>
                     </div>
                     
                     <div class="hero-form">
@@ -143,6 +145,24 @@
                                 <button type="submit" class="btn btn-submit">Submit</button>
                             </form>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Content Wrapper (hidden on desktop) -->
+                <div class="mobile-content-wrapper">
+                    <div class="company-branding">
+                        <h1>Brightsharkes Global Resources</h1>
+                        <p class="hero-subtitle">Your trusted partner for comprehensive business solutions</p>
+                    </div>
+
+                    <div class="caption-container">
+                        <h2 class="video-caption">AGO & Lubricants Supply</h2>
+                        <p class="video-description">Reliable procurement and supply of AGO and industrial lubricants</p>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="window.location.href='tel:08113017565'">Call Us 08113017565</button>
+                        <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Quote</button>
                     </div>
                 </div>
 
@@ -188,6 +208,38 @@
                         </svg>
                     </button>
                     <span class="scroll-down-text">Scroll Down</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Contact Form Section (only visible on mobile) -->
+    <section class="mobile-form-section">
+        <div class="container">
+            <div class="mobile-form-wrapper">
+                <div class="contact-form-card">
+                    <h3>Get a Free Quote</h3>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mobileFirstName">First name *</label>
+                                <input type="text" id="mobileFirstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobileLastName">Last name *</label>
+                                <input type="text" id="mobileLastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileEmail">Email *</label>
+                            <input type="email" id="mobileEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileMessage">Write a message *</label>
+                            <textarea id="mobileMessage" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>

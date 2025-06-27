@@ -3,8 +3,8 @@ class VideoCarousel {
     constructor() {
         this.videos = document.querySelectorAll('.background-video');
         this.indicators = document.querySelectorAll('.indicator');
-        this.captionElement = document.querySelector('.video-caption');
-        this.descriptionElement = document.querySelector('.video-description');
+        this.captionElements = document.querySelectorAll('.video-caption');
+        this.descriptionElements = document.querySelectorAll('.video-description');
         this.captionContainer = document.querySelector('.caption-container');
         this.progressFill = document.querySelector('.progress-fill');
         this.currentVideoSpan = document.querySelector('.current-video');
@@ -71,15 +71,21 @@ class VideoCarousel {
     }
     
     setInitialCaption() {
-        if (this.captions.length > 0 && this.captionElement && this.descriptionElement) {
+        if (this.captions.length > 0 && this.captionElements.length > 0 && this.descriptionElements.length > 0) {
             const firstCaption = this.captions[0];
             
             console.log(`Setting initial caption: ${firstCaption.title}`); // Debug log
             
-            this.captionElement.textContent = firstCaption.title;
-            this.descriptionElement.textContent = firstCaption.description;
-            this.captionElement.style.opacity = '1';
-            this.descriptionElement.style.opacity = '1';
+            // Update all caption elements (desktop and mobile)
+            this.captionElements.forEach(element => {
+                element.textContent = firstCaption.title;
+                element.style.opacity = '1';
+            });
+            
+            this.descriptionElements.forEach(element => {
+                element.textContent = firstCaption.description;
+                element.style.opacity = '1';
+            });
         }
     }
     
@@ -194,7 +200,7 @@ class VideoCarousel {
     }
     
     updateCaption() {
-        if (!this.captionElement || !this.descriptionElement) return;
+        if (this.captionElements.length === 0 || this.descriptionElements.length === 0) return;
         
         // Use fallback captions to ensure they always work
         const captionData = this.captions[this.currentIndex];
@@ -202,9 +208,14 @@ class VideoCarousel {
         if (captionData) {
             console.log(`Updating caption to: ${captionData.title} (index: ${this.currentIndex})`); // Debug log
             
-            // Direct update without animations
-            this.captionElement.textContent = captionData.title;
-            this.descriptionElement.textContent = captionData.description;
+            // Update all caption elements (desktop and mobile)
+            this.captionElements.forEach(element => {
+                element.textContent = captionData.title;
+            });
+            
+            this.descriptionElements.forEach(element => {
+                element.textContent = captionData.description;
+            });
         }
     }
     
