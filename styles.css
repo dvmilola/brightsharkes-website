@@ -1123,6 +1123,10 @@ p {
         gap: 1rem;
     }
 
+    .about-cta {
+        text-align: center;
+    }
+
     .contact-content {
         grid-template-columns: 1fr;
         gap: clamp(2rem, 6vw, 3rem);
@@ -1395,6 +1399,10 @@ p {
     .about-stats {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .about-cta {
+        text-align: center;
     }
 
     .hero-buttons {
