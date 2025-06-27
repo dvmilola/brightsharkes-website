@@ -817,19 +817,20 @@ p {
 
     /* Mobile Video Carousel Fixes */
     .hero-video-carousel {
-        min-height: 100vh;
+        min-height: 120vh;
+        height: auto;
         position: relative;
         overflow: visible;
     }
 
     .video-content-overlay {
-        padding: 90px 20px 60px;
+        padding: 90px 20px 100px;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: auto;
-        min-height: 100%;
+        min-height: 120vh;
         overflow: visible;
     }
 
@@ -858,8 +859,9 @@ p {
         max-width: 400px;
         margin: 0 auto;
         flex-shrink: 0;
-        margin-bottom: 4rem;
+        margin-bottom: 6rem;
         z-index: 10;
+        padding-bottom: 2rem;
     }
 
     .hero-buttons {
@@ -984,19 +986,20 @@ p {
 
     /* Extra Small Mobile Video Carousel */
     .hero-video-carousel {
-        min-height: 100vh;
+        min-height: 120vh;
+        height: auto;
         position: relative;
         overflow: visible;
     }
 
     .video-content-overlay {
-        padding: 80px 15px 50px;
+        padding: 80px 15px 80px;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: auto;
-        min-height: 100%;
+        min-height: 120vh;
         overflow: visible;
     }
 
@@ -1011,8 +1014,9 @@ p {
     }
 
     .hero-form {
-        margin-bottom: 3rem;
+        margin-bottom: 5rem;
         z-index: 10;
+        padding-bottom: 2rem;
     }
 
     .company-branding {
