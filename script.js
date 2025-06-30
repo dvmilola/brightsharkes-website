@@ -11,16 +11,12 @@ class VideoCarousel {
         this.totalVideosSpan = document.querySelector('.total-videos');
         this.prevBtn = document.querySelector('.prev-btn');
         this.nextBtn = document.querySelector('.next-btn');
-        this.playOverlay = document.getElementById('videoPlayOverlay');
-        this.playBtn = document.getElementById('videoPlayBtn');
         
         this.currentIndex = 0;
         this.totalVideos = this.videos.length;
         this.autoPlayInterval = null;
         this.autoPlayDelay = 6000; // 6 seconds per video
         this.isTransitioning = false;
-        this.hasUserInteracted = false;
-        this.isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         
         // Fallback captions in case data attributes fail
         this.captions = [
@@ -67,72 +63,11 @@ class VideoCarousel {
         // Add event listeners
         this.addEventListeners();
         
-        // Handle Safari autoplay restrictions
-        this.handleAutoplayRestrictions();
+        // Start autoplay immediately
+        this.startAutoPlay();
         
         // Ensure videos are ready
         this.preloadVideos();
-    }
-    
-    handleAutoplayRestrictions() {
-        // Give autoplay a chance to work first
-        setTimeout(() => {
-            const testVideo = this.videos[0];
-            if (testVideo) {
-                // Check if video is actually playing
-                if (testVideo.paused) {
-                    // Autoplay failed - try to start it manually
-                    const playPromise = testVideo.play();
-                    
-                    if (playPromise !== undefined) {
-                        playPromise.then(() => {
-                            // Manual play worked
-                            this.hasUserInteracted = true;
-                            this.startAutoPlay();
-                        }).catch(() => {
-                            // Both autoplay and manual play blocked - show play button
-                            this.showPlayButton();
-                        });
-                    } else {
-                        // No play promise support - show play button
-                        this.showPlayButton();
-                    }
-                } else {
-                    // Autoplay is working!
-                    this.hasUserInteracted = true;
-                    this.startAutoPlay();
-                }
-            }
-        }, 100); // Small delay to let autoplay attempt
-    }
-    
-    showPlayButton() {
-        if (this.playOverlay) {
-            this.playOverlay.classList.add('show');
-        }
-        
-        if (this.playBtn) {
-            this.playBtn.addEventListener('click', () => {
-                this.enableVideoPlayback();
-            });
-        }
-    }
-    
-    enableVideoPlayback() {
-        this.hasUserInteracted = true;
-        
-        // Hide play button
-        if (this.playOverlay) {
-            this.playOverlay.classList.remove('show');
-        }
-        
-        // Start playing the current video
-        const currentVideo = this.videos[this.currentIndex];
-        if (currentVideo) {
-            currentVideo.play().then(() => {
-                this.startAutoPlay();
-            }).catch(console.error);
-        }
     }
     
     setInitialCaption() {
@@ -311,11 +246,7 @@ class VideoCarousel {
         if (nextVideo) {
             nextVideo.classList.add('active');
             nextVideo.currentTime = 0;
-            
-            // Only try to play if user has interacted
-            if (this.hasUserInteracted) {
-                nextVideo.play().catch(console.error);
-            }
+            nextVideo.play().catch(console.error);
         }
         
         // Reset transitioning flag after a short delay
@@ -363,9 +294,6 @@ class VideoCarousel {
     }
     
     startAutoPlay() {
-        // Only start autoplay if user has interacted
-        if (!this.hasUserInteracted) return;
-        
         this.pauseAutoPlay(); // Clear any existing interval
         console.log('Starting autoplay with', this.autoPlayDelay, 'ms delay'); // Debug log
         this.autoPlayInterval = setInterval(() => {
