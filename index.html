@@ -152,16 +152,26 @@
         <div class="video-carousel-container">
             <!-- Video Background Container -->
             <div class="video-container">
+                <!-- Play Button Overlay for Safari -->
+                <div class="video-play-overlay" id="videoPlayOverlay">
+                    <button class="video-play-btn" id="videoPlayBtn" aria-label="Play video">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="white">
+                            <polygon points="8,5 19,12 8,19"></polygon>
+                        </svg>
+                        <span>Click to Start Video</span>
+                    </button>
+                </div>
+                
                 <!-- Video 1: AGO & Lubricants -->
                 <video 
                     class="background-video active" 
                     data-caption="AGO & Lubricants Supply"
                     data-description="Reliable procurement and supply of AGO and industrial lubricants"
                     muted 
-                    autoplay 
                     loop
                     playsinline
-                    preload="metadata">
+                    preload="metadata"
+                    webkit-playsinline>
                     <source src="assets/videos/12731050_3840_2160_24fps.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -172,10 +182,10 @@
                     data-caption="Electrical & Solar Accessories"
                     data-description="Complete sourcing of electrical equipment and solar lighting solutions"
                     muted 
-                    autoplay 
                     loop
                     playsinline
-                    preload="none">
+                    preload="none"
+                    webkit-playsinline>
                     <source src="assets/videos/1477975_People_Technology_3840x2160.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -186,10 +196,10 @@
                     data-caption="Facility Maintenance"
                     data-description="Comprehensive maintenance services for your business premises"
                     muted 
-                    autoplay 
                     loop
                     playsinline
-                    preload="none">
+                    preload="none"
+                    webkit-playsinline>
                     <source src="assets/videos/3196563-uhd_3840_2160_25fps.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -200,10 +210,10 @@
                     data-caption="Horticulture Services"
                     data-description="Professional landscaping and garden maintenance solutions"
                     muted 
-                    autoplay 
                     loop
                     playsinline
-                    preload="none">
+                    preload="none"
+                    webkit-playsinline>
                     <source src="assets/videos/8544141-hd_1920_1080_25fps.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -214,10 +224,10 @@
                     data-caption="Personnel Sourcing"
                     data-description="Recruitment of qualified cleaners, chefs, and support staff"
                     muted 
-                    autoplay 
                     loop
                     playsinline
-                    preload="none">
+                    preload="none"
+                    webkit-playsinline>
                     <source src="assets/videos/1115170_Cleaning_Man_3840x2160.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>

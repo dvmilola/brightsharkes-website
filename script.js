@@ -11,12 +11,16 @@ class VideoCarousel {
         this.totalVideosSpan = document.querySelector('.total-videos');
         this.prevBtn = document.querySelector('.prev-btn');
         this.nextBtn = document.querySelector('.next-btn');
+        this.playOverlay = document.getElementById('videoPlayOverlay');
+        this.playBtn = document.getElementById('videoPlayBtn');
         
         this.currentIndex = 0;
         this.totalVideos = this.videos.length;
         this.autoPlayInterval = null;
         this.autoPlayDelay = 6000; // 6 seconds per video
         this.isTransitioning = false;
+        this.hasUserInteracted = false;
+        this.isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         
         // Fallback captions in case data attributes fail
         this.captions = [
@@ -63,11 +67,62 @@ class VideoCarousel {
         // Add event listeners
         this.addEventListeners();
         
-        // Start autoplay
-        this.startAutoPlay();
+        // Handle Safari autoplay restrictions
+        this.handleAutoplayRestrictions();
         
         // Ensure videos are ready
         this.preloadVideos();
+    }
+    
+    handleAutoplayRestrictions() {
+        // Check if autoplay is supported
+        const testVideo = this.videos[0];
+        if (testVideo) {
+            const playPromise = testVideo.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    // Autoplay worked
+                    this.hasUserInteracted = true;
+                    this.startAutoPlay();
+                }).catch(() => {
+                    // Autoplay blocked - show play button
+                    this.showPlayButton();
+                });
+            } else {
+                // No play promise support - likely older browser
+                this.showPlayButton();
+            }
+        }
+    }
+    
+    showPlayButton() {
+        if (this.playOverlay) {
+            this.playOverlay.classList.add('show');
+        }
+        
+        if (this.playBtn) {
+            this.playBtn.addEventListener('click', () => {
+                this.enableVideoPlayback();
+            });
+        }
+    }
+    
+    enableVideoPlayback() {
+        this.hasUserInteracted = true;
+        
+        // Hide play button
+        if (this.playOverlay) {
+            this.playOverlay.classList.remove('show');
+        }
+        
+        // Start playing the current video
+        const currentVideo = this.videos[this.currentIndex];
+        if (currentVideo) {
+            currentVideo.play().then(() => {
+                this.startAutoPlay();
+            }).catch(console.error);
+        }
     }
     
     setInitialCaption() {
@@ -238,8 +293,20 @@ class VideoCarousel {
         this.updateCounter();
         
         // Handle video transition
-        currentVideo.classList.remove('active');
-        nextVideo.classList.add('active');
+        if (currentVideo) {
+            currentVideo.classList.remove('active');
+            currentVideo.pause();
+        }
+        
+        if (nextVideo) {
+            nextVideo.classList.add('active');
+            nextVideo.currentTime = 0;
+            
+            // Only try to play if user has interacted
+            if (this.hasUserInteracted) {
+                nextVideo.play().catch(console.error);
+            }
+        }
         
         // Reset transitioning flag after a short delay
         setTimeout(() => {
@@ -286,6 +353,9 @@ class VideoCarousel {
     }
     
     startAutoPlay() {
+        // Only start autoplay if user has interacted
+        if (!this.hasUserInteracted) return;
+        
         this.pauseAutoPlay(); // Clear any existing interval
         console.log('Starting autoplay with', this.autoPlayDelay, 'ms delay'); // Debug log
         this.autoPlayInterval = setInterval(() => {
