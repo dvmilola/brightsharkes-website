@@ -75,25 +75,35 @@ class VideoCarousel {
     }
     
     handleAutoplayRestrictions() {
-        // Check if autoplay is supported
-        const testVideo = this.videos[0];
-        if (testVideo) {
-            const playPromise = testVideo.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    // Autoplay worked
+        // Give autoplay a chance to work first
+        setTimeout(() => {
+            const testVideo = this.videos[0];
+            if (testVideo) {
+                // Check if video is actually playing
+                if (testVideo.paused) {
+                    // Autoplay failed - try to start it manually
+                    const playPromise = testVideo.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            // Manual play worked
+                            this.hasUserInteracted = true;
+                            this.startAutoPlay();
+                        }).catch(() => {
+                            // Both autoplay and manual play blocked - show play button
+                            this.showPlayButton();
+                        });
+                    } else {
+                        // No play promise support - show play button
+                        this.showPlayButton();
+                    }
+                } else {
+                    // Autoplay is working!
                     this.hasUserInteracted = true;
                     this.startAutoPlay();
-                }).catch(() => {
-                    // Autoplay blocked - show play button
-                    this.showPlayButton();
-                });
-            } else {
-                // No play promise support - likely older browser
-                this.showPlayButton();
+                }
             }
-        }
+        }, 100); // Small delay to let autoplay attempt
     }
     
     showPlayButton() {
