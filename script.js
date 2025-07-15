@@ -394,6 +394,50 @@ document.addEventListener('DOMContentLoaded', function() {
             this.reset();
         });
     });
+
+    // Fix textarea spacebar issue by manually handling space insertion
+    function fixTextareaSpaces() {
+        const textareas = document.querySelectorAll('textarea');
+        textareas.forEach(textarea => {
+            // Remove any problematic attributes
+            textarea.removeAttribute('pattern');
+            textarea.removeAttribute('maxlength');
+            textarea.removeAttribute('inputmode');
+            
+            // Handle spacebar manually
+            textarea.addEventListener('keydown', function(e) {
+                if (e.code === 'Space' || e.keyCode === 32 || e.key === ' ') {
+                    e.preventDefault();
+                    
+                    // Get current cursor position
+                    const start = this.selectionStart;
+                    const end = this.selectionEnd;
+                    const value = this.value;
+                    
+                    // Insert space at cursor position
+                    this.value = value.substring(0, start) + ' ' + value.substring(end);
+                    
+                    // Set cursor position after the inserted space
+                    this.selectionStart = this.selectionEnd = start + 1;
+                    
+                    // Trigger input event
+                    this.dispatchEvent(new Event('input', { bubbles: true }));
+                    
+                    return false;
+                }
+            });
+        });
+    }
+    
+    // Run when DOM is loaded and also run immediately
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fixTextareaSpaces);
+    } else {
+        fixTextareaSpaces();
+    }
+    
+    // Also run after a short delay to catch any dynamically added textareas
+    setTimeout(fixTextareaSpaces, 100);
     
     // Initialize Video Carousel
     const videoCarousel = new VideoCarousel();
